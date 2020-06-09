@@ -1,4 +1,4 @@
-import sys 
+import sys
 sys.path.append('../singly_linked_list')
 from singly_linked_list import LinkedList
 
