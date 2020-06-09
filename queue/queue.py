@@ -1,4 +1,7 @@
-from singly_linked_list import singly_linked_list
+import sys 
+sys.path.append('../singly_linked_list')
+from singly_linked_list import LinkedList
+
 
 """
 A queue is a data structure whose primary purpose is to store and
@@ -24,26 +27,31 @@ Stretch: What if you could only use instances of your Stack class to implement t
 #         return len(self.storage)
 
 #     def enqueue(self, value):
-#         #why is a second arguement required here? originally had only (value)
-#         return self.storage.insert(0, value)
+#         #append to the end of the line
+#         return self.storage.append(value)
 
 #     def dequeue(self):
 #         if len(self.storage) > 0:
-#             return self.storage.pop()
+#             #pop from the front of the line index[0]
+#             return self.storage.pop(0)
 
 #list
 class Queue:
     def __init__(self):
         self.size = 0
-        self.storage = singly_linked_list
+        self.storage = LinkedList()
 
     def __len__(self):
-        return len(self.storage)
+        return self.size
 
     def enqueue(self, value):
-        #why is a second arguement required here? originally had only (value)
-        return self.storage.insert(0, value)
+        #self.seize += 1 used to add one each time we add to list.
+        self.size += 1
+        return self.storage.add_to_tail(value)
 
     def dequeue(self):
-        if len(self.storage) > 0:
-            return self.storage.pop()
+        if self.size > 0:
+            self.size -= 1
+            return self.storage.remove_head()
+        else:
+            return None
