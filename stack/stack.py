@@ -39,15 +39,15 @@ class Stack:
         self.storage = LinkedList()
 
     def __len__(self):
-        #not sure why storage and not size?
         return self.size
 
     def push(self, value):
+        #add one from list when value added
         self.size +=1
         return self.storage.add_to_tail(value)
 
     def pop(self):
-        #why do you need a conditional here??
+        #need to make sure to remove 1 from list everytime value added
         if self.size > 0:
             self.size -=1
             return self.storage.remove_tail()
