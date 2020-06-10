@@ -48,9 +48,9 @@ class Stack:
 
     def pop(self):
         #need to make sure to remove 1 from list everytime value added
-        if self.size > 0:
-            self.size -=1
-            return self.storage.remove_tail()
-        else:
+        if self.size == 0:
             return None
+        self.size -=1
+        return self.storage.remove_tail()
+       
 

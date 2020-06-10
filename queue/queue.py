@@ -18,40 +18,40 @@ return elements in First In First Out order.
 Stretch: What if you could only use instances of your Stack class to implement the Queue?
          What would that look like? How many Stacks would you need? Try it!
 """
-# class Queue:
-#     def __init__(self):
-#         self.size = 0
-#         self.storage = []
-
-#     def __len__(self):
-#         return len(self.storage)
-
-#     def enqueue(self, value):
-#         #append to the end of the line
-#         return self.storage.append(value)
-
-#     def dequeue(self):
-#         if len(self.storage) > 0:
-#             #pop from the front of the line index[0]
-#             return self.storage.pop(0)
-
-#list
 class Queue:
     def __init__(self):
         self.size = 0
-        self.storage = LinkedList()
+        self.storage = []
 
     def __len__(self):
-        return self.size
+        return len(self.storage)
 
     def enqueue(self, value):
-        #self.seize += 1 used to add one each time we add to list.
-        self.size += 1
-        return self.storage.add_to_tail(value)
+        #append to the end of the line
+        return self.storage.append(value)
 
     def dequeue(self):
-        if self.size > 0:
-            self.size -= 1
-            return self.storage.remove_head()
-        else:
-            return None
+        if len(self.storage) > 0:
+            #pop from the front of the line index[0]
+            return self.storage.pop(0)
+
+# #list
+# class Queue:
+#     def __init__(self):
+#         self.size = 0
+#         self.storage = LinkedList()
+
+#     def __len__(self):
+#         return self.size
+
+#     def enqueue(self, value):
+#         #self.seize += 1 used to add one each time we add to list.
+#         self.size += 1
+#         return self.storage.add_to_tail(value)
+
+#     def dequeue(self):
+#         if self.size > 0:
+#             self.size -= 1
+#             return self.storage.remove_head()
+#         else:
+#             return None
