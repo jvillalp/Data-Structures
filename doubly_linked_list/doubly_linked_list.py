@@ -115,6 +115,10 @@ class DoublyLinkedList:
                 self.tail = self.tail.prev
                 self.tail.next = None
             return value
+    #another way to code this
+        # value=self.tail.value
+        # self.delete(self.tail)
+        # return value
 
     """Removes the input node from its current spot in the 
     List and inserts it as the new head node of the List."""
@@ -154,27 +158,40 @@ class DoublyLinkedList:
     """Removes a node from the list and handles cases where
     the node was the head or the tail"""
     def delete(self, node):
-        if not node:
+        #if no node (empty)
+        if not node: # OR if not self.head and not self.tail:
             return None
+            #if only 1 node (element)remove it by setting head and tail pointers to none
         if node == self.head and node == self.tail:
             self.head = None
             self.tail = None
+            #if 2 or more
         else:
+            #delete node connections
             if node.prev:
                 node.prev.next = node.next
             if node.next:                
                 node.next.prev = node.prev
+            #if node to delete is head
+            #set DLL head pointer to node.next
             if node == self.head:
                 self.head = node.next
+            #if node to delete tail
+            #set DLL tail pointer
             if node == self.tail:
                 self.tail = node.prev
+        #decrement length of DLL 
         self.length -= 1
+
+        #more than 3 nodes in our DLL and not head or tail?
+        #else:
+        # node.delete()
         
     """Returns the highest value currently in the list"""
     def get_max(self):
         head = self.head
         if not head:
-            return 0
+            return 0 #or none
         maxval = head.value
         while head.next:
             if head.value > maxval:
