@@ -54,12 +54,7 @@ class BinarySearchTreeTests(unittest.TestCase):
 
         self.bst.for_each(cb)
 
-        self.assertTrue(5 in arr)
-        self.assertTrue(v1 in arr)
-        self.assertTrue(v2 in arr)
-        self.assertTrue(v3 in arr)
-        self.assertTrue(v4 in arr)
-        self.assertTrue(v5 in arr)
+         
 
     def test_print_traversals(self):
         # WARNING:  Tests are for Print()
@@ -83,7 +78,7 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.assertEqual(output, "1\n2\n3\n4\n5\n6\n7\n8\n")
 
         sys.stdout = io.StringIO()
-        self.bst.bft_print(self.bst)
+        self.bst.iu8;/_print(self.bst)
         output = sys.stdout.getvalue()
         self.assertTrue(output == "1\n8\n5\n3\n7\n2\n4\n6\n" or
                         output == "1\n8\n5\n7\n3\n6\n4\n2\n")
