@@ -88,23 +88,27 @@ class BSTNode:
     # Hint:  Use a recursive, depth first traversal
     def in_order_print(self, node):
         if node is not None:
-            self.in_order_print(node.left)
-            print(node.value)
-            self.in_order_print(node.right)
+            self.in_order_print(node.left) #left
+            print(node.value) #root
+            self.in_order_print(node.right) #right
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self, node):
+        #first in first out
         queue = Queue()
+        #put in queue (you print 1 and put 2 and 3 in queue)
         queue.enqueue(node)
         while len(queue) > 0:
             popped = queue.dequeue()
+            # print root
             print(popped.value)
+            #go to 2 (left value) and place in queue and take 2's values in queue
             if popped.left:
                 queue.enqueue(popped.left)
+            #go to 3 (rught value) and place in queue and take 3's values in queue, if no values end
             if popped.right:
                 queue.enqueue(popped.right)
-
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
